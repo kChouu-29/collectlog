@@ -1,0 +1,22 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /app/logs/out.log       # Đường dẫn tới file log trong container Go
+    fields:
+      service: golang-elk
+    json.keys_under_root: true
+    json.add_error_key: true
+    json.overwrite_keys: true
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"] # Gửi log sang container Elasticsearch
+  username: "elastic"
+  password: "changeme"          # Mặc định trong môi trường dev
+
+setup.kibana:
+  host: "kibana:5601"
+
+setup.template.enabled: true
+setup.template.name: "golang-elk"
+setup.template.pattern: "golang-elk-*"

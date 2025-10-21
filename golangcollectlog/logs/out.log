@@ -1,0 +1,34 @@
+{"@timestamp":"2025-10-21T15:57:18.850+0700","ecs.version":"1.6.0","log.level":"info","message":"Start Service"}
+{"@timestamp":"2025-10-21T15:57:29.515+0700","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T15:57:29.571+0700","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T15:57:36.045+0700","ecs.version":"1.6.0","log.level":"info","message":"Base Controller"}
+{"@timestamp":"2025-10-21T15:57:36.114+0700","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T15:57:43.338+0700","ecs.version":"1.6.0","log.level":"info","message":"Base Controller"}
+{"@timestamp":"2025-10-21T15:57:43.389+0700","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T15:57:46.378+0700","ecs.version":"1.6.0","log.level":"info","message":"Base Controller"}
+{"@timestamp":"2025-10-21T15:57:46.432+0700","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T09:38:17.372Z","ecs.version":"1.6.0","log.level":"info","message":"Start Service"}
+{"@timestamp":"2025-10-21T09:47:13.918Z","ecs.version":"1.6.0","log.level":"info","message":"Start Service"}
+{"@timestamp":"2025-10-21T09:50:06.818Z","ecs.version":"1.6.0","log.level":"info","message":"Start Service"}
+{"@timestamp":"2025-10-21T10:01:11.729Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T10:01:11.911Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T10:01:34.443Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T10:01:34.521Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T10:02:00.727Z","ecs.version":"1.6.0","log.level":"info","message":"Base Controller"}
+{"@timestamp":"2025-10-21T10:02:00.814Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T10:02:24.837Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T10:02:24.908Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T10:02:30.956Z","ecs.version":"1.6.0","log.level":"info","message":"Base Controller"}
+{"@timestamp":"2025-10-21T10:02:31.018Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T14:55:35.740Z","ecs.version":"1.6.0","log.level":"info","message":"Start Service"}
+{"@timestamp":"2025-10-21T14:56:50.857Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T14:56:51.694Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T14:59:17.999Z","ecs.version":"1.6.0","log.level":"info","message":"Base Controller"}
+{"@timestamp":"2025-10-21T14:59:18.309Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T14:59:25.288Z","ecs.version":"1.6.0","log.level":"info","message":"Base Controller"}
+{"@timestamp":"2025-10-21T14:59:25.350Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T15:00:18.595Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T15:00:18.674Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T22:03:09.413+0700","ecs.version":"1.6.0","log.level":"info","message":"Start Service"}
+{"@timestamp":"2025-10-21T15:03:34.952Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
+{"@timestamp":"2025-10-21T15:03:35.206Z","ecs.version":"1.6.0","log.level":"info","message":"Welcome Home Log"}
