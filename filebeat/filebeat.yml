@@ -2,27 +2,18 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-      - /app/logs/out.log       # Đường dẫn tới file log trong container Go
+      - /app/logs/out.log
     fields:
       service: golang-elk
-  # THÊM CÁC DÒNG NÀY VÀO:
-# XÓA KHỐI "grok" CŨ VÀ THAY BẰNG KHỐI "dissect" NÀY:
-# THAY THẾ BẰNG KHỐI NÀY:
-    processors:
-      - dissect:
-          # Dùng "tokenizer" (số ít) và 1 pattern duy nhất
-          tokenizer: 'time="%{@timestamp}" level=%{log.level} msg="%{message}"'
-          
-          # Chỉ định trường cần bóc tách
-          field: "message" 
-          
-          # Bỏ qua nếu dòng log không khớp
-          ignore_failure: true
+    
+    # BỘ XỬ LÝ GROK (REGEX)
+    # Nó sẽ thử bóc tách log bằng Pattern 1, nếu thất bại, nó thử Pattern 2
+
 
 output.elasticsearch:
-  hosts: ["elasticsearch:9200"] # Gửi log sang container Elasticsearch
+  hosts: ["elasticsearch:9200"] 
   username: "elastic"
-  password: "changeme"          # Mặc định trong môi trường dev
+  password: "changeme"          
 
 setup.kibana:
   host: "kibana:5601"
