@@ -8,13 +8,15 @@ import (
 	"time"
 
 	log "github.com/sirupsen/logrus"
-	"go.elastic.co/ecslogrus"
 )
 
 func main() {
-	log.SetFormatter(&ecslogrus.Formatter{})
+	// log.SetFormatter(&ecslogrus.Formatter{})
 	log.SetLevel(log.TraceLevel)
-
+	log.SetFormatter(&log.TextFormatter{
+		FullTimestamp:   true,
+		TimestampFormat: "2006-01-02T15:04:05.000Z07:00", // Định dạng ISO8601
+	})
 	logFilePath := "logs/out.log"
 
 	// Create logs directory if it doesn't exist

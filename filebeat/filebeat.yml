@@ -5,9 +5,19 @@ filebeat.inputs:
       - /app/logs/out.log       # Đường dẫn tới file log trong container Go
     fields:
       service: golang-elk
-    json.keys_under_root: true
-    json.add_error_key: true
-    json.overwrite_keys: true
+  # THÊM CÁC DÒNG NÀY VÀO:
+# XÓA KHỐI "grok" CŨ VÀ THAY BẰNG KHỐI "dissect" NÀY:
+# THAY THẾ BẰNG KHỐI NÀY:
+    processors:
+      - dissect:
+          # Dùng "tokenizer" (số ít) và 1 pattern duy nhất
+          tokenizer: 'time="%{@timestamp}" level=%{log.level} msg="%{message}"'
+          
+          # Chỉ định trường cần bóc tách
+          field: "message" 
+          
+          # Bỏ qua nếu dòng log không khớp
+          ignore_failure: true
 
 output.elasticsearch:
   hosts: ["elasticsearch:9200"] # Gửi log sang container Elasticsearch
