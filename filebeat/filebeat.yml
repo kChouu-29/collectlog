@@ -8,7 +8,9 @@ filebeat.inputs:
     
     # BỘ XỬ LÝ GROK (REGEX)
     # Nó sẽ thử bóc tách log bằng Pattern 1, nếu thất bại, nó thử Pattern 2
-
+    json.keys_under_root: true
+    json.add_error_key: true
+    json.overwrite_keys: true
 
 output.elasticsearch:
   hosts: ["elasticsearch:9200"] 

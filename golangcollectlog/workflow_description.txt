@@ -1,0 +1,59 @@
+LUỒNG HOẠT ĐỘNG HỆ THỐNG THU THẬP LOG
+
+1. Cấu trúc dự án:
+   - main.go: File chính khởi động server và cấu hình logging
+   - parse.go: Xử lý middleware logging và định dạng log
+   - model.go: Định nghĩa cấu trúc dữ liệu
+   - router/router.go: Định nghĩa các routes
+   - controller/base_controller.go: Xử lý các endpoint
+
+2. Khởi động ứng dụng (main.go):
+   - Thiết lập ECS logging formatter (Elastic Common Schema)
+   - Tạo thư mục logs và file out.log
+   - Khởi tạo HTTP server trên cổng 8080
+   - Áp dụng middleware logging cho tất cả requests
+   - Cấu hình timeouts: Read (10s), Write (10s)
+
+3. Xử lý Request (Workflow):
+   a. Request đến server
+   b. LoggingMiddleware (parse.go) bắt đầu xử lý:
+      - Ghi nhận thời điểm bắt đầu
+      - Tạo LoggingResponseWriter để theo dõi response
+      - Chuyển request tới handler tiếp theo
+      
+   c. Router (router/router.go) định tuyến request:
+      - GET /: Hiển thị thông báo hệ thống đang chạy
+      - GET /api/base: Chuyển tới base controller
+
+   d. Controller xử lý (base_controller.go):
+      - Trả về response dạng JSON
+      
+   e. LoggingMiddleware hoàn tất:
+      - Tính toán thời gian xử lý
+      - Ghi log với các thông tin:
+        * Phương thức HTTP (GET, POST,...)
+        * Đường dẫn URL
+        * Mã trạng thái HTTP
+        * Kích thước response
+        * Referrer
+        * User Agent
+        * IP của client
+        * Thời gian xử lý
+
+4. Ghi Log:
+   - Sử dụng thư viện logrus với ECS formatter
+   - Log được ghi vào file logs/out.log
+   - Format log theo chuẩn Elastic Common Schema
+   - Hỗ trợ tích hợp với hệ thống ELK Stack
+
+5. Đặc điểm kỹ thuật:
+   - Sử dụng Go 1.22 với pattern routing mới
+   - Middleware pattern để xử lý logging
+   - Elastic Common Schema để chuẩn hóa log
+   - Hỗ trợ theo dõi hiệu năng qua thời gian xử lý request
+
+6. Bảo mật và Xử lý lỗi:
+   - Ghi log tất cả requests để audit
+   - Xử lý panic trong controller
+   - File permissions được thiết lập cho log file (0666)
+   - Thư mục logs được tạo với quyền 0755
